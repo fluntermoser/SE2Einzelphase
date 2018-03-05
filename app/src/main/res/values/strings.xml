@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">SE2Einzelphase</string>
+    <string name="palindrome_default">Palindrome</string>
+    <string name="palindrome_hint">Enter a string that has at least 5 characters. By pressing check it will be evaluated whether the string is a palindrome or not.</string>
+    <string name="check">Check</string>
+    <string name="stringsIsPalindrome">RESULT: The string IS a palindrome</string>
+    <string name="stringIsNotPalindrome">RESULT: The string IS NOT a palindrome</string>
+    <string name="errorEmptyString">ERROR: Please enter a string!</string>
+    <string name="errorStringToShort">ERROR: Please enter at least 5 characters</string>
 </resources>
