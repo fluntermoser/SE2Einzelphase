@@ -21,12 +21,12 @@ public class MainActivity extends AppCompatActivity {
         String text = editText.getText().toString();
 
         if(text.isEmpty() || text.length() == 0 || text == null) {
-            writeMessage(R.string.errorEmptyString);
+            writeMessage(R.string.errorEmptyString, R.color.red);
         } else if (text.length() < 5) {
-            writeMessage(R.string.errorStringToShort);
+            writeMessage(R.string.errorStringToShort, R.color.red);
         }
         else if(isPalindrome(text)) {
-            writeMessage(R.string.stringsIsPalindrome);
+            writeMessage(R.string.stringsIsPalindrome, R.color.green);
         } else {
             writeMessage(R.string.stringIsNotPalindrome);
         }
@@ -34,12 +34,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void writeMessage(int resourceId) {
+        writeMessage(resourceId, R.color.black);
+    }
+
+    public void writeMessage(int resourceId, int colorId) {
         String message = getResources().getText(resourceId).toString();
         Context context = getApplicationContext();
         int duration = Toast.LENGTH_LONG;
         Toast.makeText(context, message, duration).show();
         TextView resultView = findViewById(R.id.resultText);
         resultView.setText(message);
+        resultView.setTextColor(getColor(colorId));
     }
 
     public static boolean isPalindrome(String str)	{
